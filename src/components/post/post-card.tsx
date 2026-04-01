@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import CoverImage from './cover-image';
 import DateFormatter from './date-formatter';
+import PostCardTags from './post-card-tags';
 
 type Props = {
   post: Post;
@@ -47,20 +48,18 @@ export function PostCard({ post, pinnedLabel, className }: Props) {
                 ) : null}
               </div>
               <div className="space-y-1">
-                <h3 className="line-clamp-2 text-[15px] leading-5.5 font-semibold tracking-tight text-stone-950 md:text-base">
+                <h3 className="line-clamp-1 text-[15px] leading-5.5 font-semibold tracking-tight text-stone-950 md:text-base">
                   {post.title}
                 </h3>
                 <p className="line-clamp-1 text-sm leading-5 text-stone-600">
                   {post.previewText}
                 </p>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {post.tags?.map((tag) => (
-                  <Badge key={tag} variant="outline">
-                    {tag}
-                  </Badge>
-                ))}
-              </div>
+              {post.tags && post.tags.length > 0 ? (
+                <div className="relative">
+                  <PostCardTags tags={post.tags} />
+                </div>
+              ) : null}
             </div>
           </article>
         </CardContent>

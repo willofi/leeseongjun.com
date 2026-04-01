@@ -20,14 +20,19 @@ export function PostHeader({ post }: Props) {
         <PostTitle>{post.title}</PostTitle>
         <div className="flex flex-wrap items-center gap-2 text-sm text-stone-500 dark:text-stone-400">
           <DateFormatter dateString={post.date} />
-          <div className="flex flex-wrap gap-2">
-            {post.tags?.map((tag) => (
-              <Badge key={tag} variant="outline">
-                {tag}
-              </Badge>
+        </div>
+        {post.tags && post.tags.length > 0 ? (
+          <div className="flex flex-wrap gap-x-3 gap-y-2 text-sm text-stone-500 dark:text-stone-400">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="transition-colors hover:text-stone-950 dark:hover:text-stone-50"
+              >
+                #{tag}
+              </span>
             ))}
           </div>
-        </div>
+        ) : null}
       </div>
       <Card className="overflow-hidden border-0 p-3 shadow-none ring-0 md:p-4">
         <div className="mx-auto max-w-3xl sm:mx-auto">

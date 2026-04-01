@@ -16,7 +16,11 @@ type Props = {
 export function PostsFeed({ posts }: Props) {
   const [selectedTag, setSelectedTag] = useState<string>(allTag);
 
-  const tags = Array.from(new Set(posts.flatMap((post) => post.tags ?? [])));
+  const tags = Array.from(new Set(posts.flatMap((post) => post.tags ?? [])))
+    .filter(Boolean)
+    .sort((left, right) =>
+      left.localeCompare(right, 'en', { sensitivity: 'base' }),
+    );
 
   const filteredPosts =
     selectedTag === allTag

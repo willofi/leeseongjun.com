@@ -7,7 +7,10 @@
 :root {
   --card: oklch(1 0 0);
   --muted: oklch(0.97 0 0);
-  --code-background: #f5f5f5;
+  --code-background: #f7f8fa;
+  --code-foreground: #1f2328;
+  --code-border: rgba(15, 23, 42, 0.08);
+  --code-inline-background: #f1f3f6;
   --quote-background: #fafafa;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -248,12 +251,43 @@ a {
 }
 
 .markdown pre {
+  position: relative;
   overflow-x: auto;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border: 1px solid var(--code-border);
   background-color: var(--code-background);
-  padding: 0.95rem 1rem;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 10px 24px rgba(15, 23, 42, 0.04);
+  padding: 1.1rem 1rem 1rem;
+  color: var(--code-foreground);
   font-size: 0.84rem;
+  line-height: 1.7;
+}
+
+.markdown pre::before {
+  display: block;
+  margin-bottom: 0.9rem;
+  width: 2.4rem;
+  height: 0.7rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(
+      circle at 0.35rem center,
+      #fb7185 0.18rem,
+      transparent 0.2rem
+    ),
+    radial-gradient(
+      circle at 1.2rem center,
+      #fbbf24 0.18rem,
+      transparent 0.2rem
+    ),
+    radial-gradient(
+      circle at 2.05rem center,
+      #4ade80 0.18rem,
+      transparent 0.2rem
+    );
+  content: '';
 }
 
 .markdown pre code,
@@ -262,11 +296,73 @@ a {
   font-family: 'JetBrains Mono', 'SFMono-Regular', 'Consolas', monospace;
 }
 
+.markdown pre code {
+  display: block;
+  min-width: max-content;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font-size: 0.92em;
+}
+
+.markdown pre .hljs-comment,
+.markdown pre .hljs-quote {
+  color: #6b7280;
+}
+
+.markdown pre .hljs-variable,
+.markdown pre .hljs-template-variable,
+.markdown pre .hljs-attribute,
+.markdown pre .hljs-tag,
+.markdown pre .hljs-regexp,
+.markdown pre .hljs-link,
+.markdown pre .hljs-name,
+.markdown pre .hljs-selector-id,
+.markdown pre .hljs-selector-class {
+  color: #c2410c;
+}
+
+.markdown pre .hljs-number,
+.markdown pre .hljs-meta,
+.markdown pre .hljs-built_in,
+.markdown pre .hljs-builtin-name,
+.markdown pre .hljs-literal,
+.markdown pre .hljs-type,
+.markdown pre .hljs-params {
+  color: #7c3aed;
+}
+
+.markdown pre .hljs-string,
+.markdown pre .hljs-symbol,
+.markdown pre .hljs-bullet {
+  color: #047857;
+}
+
+.markdown pre .hljs-title,
+.markdown pre .hljs-section {
+  color: #1d4ed8;
+}
+
+.markdown pre .hljs-keyword,
+.markdown pre .hljs-selector-tag {
+  color: #be123c;
+}
+
+.markdown pre .hljs-emphasis {
+  font-style: italic;
+}
+
+.markdown pre .hljs-strong {
+  font-weight: 700;
+}
+
 .markdown p code,
 .markdown li code {
   border-radius: 6px;
-  background-color: #f5f5f5;
+  border: 1px solid var(--code-border);
+  background-color: var(--code-inline-background);
   padding: 0.15rem 0.45rem;
+  color: var(--code-foreground);
   font-size: 0.9em;
 }
 
@@ -321,6 +417,10 @@ a {
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
+  --code-background: #171a1f;
+  --code-foreground: #e5e7eb;
+  --code-border: rgba(255, 255, 255, 0.08);
+  --code-inline-background: #20242b;
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -329,6 +429,49 @@ a {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+.dark .markdown pre .hljs-comment,
+.dark .markdown pre .hljs-quote {
+  color: #9ca3af;
+}
+
+.dark .markdown pre .hljs-variable,
+.dark .markdown pre .hljs-template-variable,
+.dark .markdown pre .hljs-attribute,
+.dark .markdown pre .hljs-tag,
+.dark .markdown pre .hljs-regexp,
+.dark .markdown pre .hljs-link,
+.dark .markdown pre .hljs-name,
+.dark .markdown pre .hljs-selector-id,
+.dark .markdown pre .hljs-selector-class {
+  color: #fb923c;
+}
+
+.dark .markdown pre .hljs-number,
+.dark .markdown pre .hljs-meta,
+.dark .markdown pre .hljs-built_in,
+.dark .markdown pre .hljs-builtin-name,
+.dark .markdown pre .hljs-literal,
+.dark .markdown pre .hljs-type,
+.dark .markdown pre .hljs-params {
+  color: #c084fc;
+}
+
+.dark .markdown pre .hljs-string,
+.dark .markdown pre .hljs-symbol,
+.dark .markdown pre .hljs-bullet {
+  color: #34d399;
+}
+
+.dark .markdown pre .hljs-title,
+.dark .markdown pre .hljs-section {
+  color: #60a5fa;
+}
+
+.dark .markdown pre .hljs-keyword,
+.dark .markdown pre .hljs-selector-tag {
+  color: #f472b6;
 }
 
 @layer base {
