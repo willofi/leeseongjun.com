@@ -1,6 +1,7 @@
 import PostItems from '@/components/post/post-items';
 import { getPostBySlug, getPostSlugs } from '@/lib/api';
 import markdownToHtml from '@/lib/markdownToHtml';
+import { extractTableOfContents } from '@/lib/post-table-of-contents';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
@@ -24,8 +25,15 @@ async function getPostFromParams(paramsPromise: Params['params']) {
 export default async function PostPage(props: Params) {
   const post = await getPostFromParams(props.params);
   const content = await markdownToHtml(post.content || '');
+  const tableOfContents = extractTableOfContents(post.content || '');
 
-  return <PostItems post={post} content={content} />;
+  return (
+    <PostItems
+      post={post}
+      content={content}
+      tableOfContents={tableOfContents}
+    />
+  );
 }
 
 export function generateStaticParams() {

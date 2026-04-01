@@ -11,7 +11,7 @@ type Props = {
 
 export function PostHeader({ post }: Props) {
   return (
-    <section className="mx-auto mt-6 max-w-5xl">
+    <section className="mx-auto mt-6 max-w-5xl lg:max-w-[62.25rem] xl:max-w-[69.25rem]">
       <div className="mb-8 space-y-4">
         <div className="flex flex-wrap gap-2">
           <Badge variant="outline">Article</Badge>
