@@ -2,7 +2,7 @@ export const siteConfig = {
   name: '흔들리는 코드 숲에서',
   title: '흔들리는 코드 숲에서 | 이성준 개발 블로그',
   description:
-    '프론트엔드, 백엔드, 인프라를 넘나들며 제품을 만드는 이성준의 개발 블로그입니다. Next.js, React, TypeScript, UI 구현과 설계의 과정을 차분히 기록합니다.',
+    '이성준의 개발 기록을 담는 블로그입니다. 구현 과정에서의 선택과 고민, 그리고 그 안에서 배운 것들을 기록합니다.',
   url: 'https://leeseongjun.com',
   author: {
     name: '이성준',
