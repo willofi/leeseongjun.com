@@ -2,13 +2,6 @@ import Container from '@/components/post/container';
 import { PostCard } from '@/components/post/post-card';
 import { PostsFeed } from '@/components/post/posts-feed';
 import { getAllPosts } from '@/lib/api';
-import { siteConfig } from '@/lib/constants';
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: siteConfig.name,
-  description: siteConfig.description,
-};
 
 export default function Home() {
   const allPosts = getAllPosts();

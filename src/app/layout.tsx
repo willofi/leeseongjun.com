@@ -10,6 +10,7 @@ import { ReactNode } from 'react';
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.name,
+  authors: [{ name: siteConfig.author.name }],
   title: {
     default: siteConfig.title,
     template: `%s | ${siteConfig.name}`,
@@ -35,11 +36,18 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [
+      {
+        url: '/og-default.png',
+        alt: `${siteConfig.name}`,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: siteConfig.title,
     description: siteConfig.description,
+    images: ['/og-default.png'],
   },
   robots: {
     index: true,
