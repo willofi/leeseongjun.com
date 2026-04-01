@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  other: {
+    'link:alternate': `${siteConfig.url}/rss.xml`,
+  },
   icons: {
     icon: '/icon',
     shortcut: '/icon',
