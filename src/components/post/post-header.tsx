@@ -20,7 +20,6 @@ export function PostHeader({ post }: Props) {
         <PostTitle>{post.title}</PostTitle>
         <div className="flex flex-wrap items-center gap-2 text-sm text-stone-500 dark:text-stone-400">
           <DateFormatter dateString={post.date} />
-          {post.tags && post.tags.length > 0 ? <span>•</span> : null}
           <div className="flex flex-wrap gap-2">
             {post.tags?.map((tag) => (
               <Badge key={tag} variant="outline">
