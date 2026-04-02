@@ -43,7 +43,7 @@ export default function PostItems({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <Container>
-        <article className="mx-auto mb-24 max-w-6xl xl:max-w-7xl">
+        <article className="mx-auto mb-24 max-w-6xl">
           <PostHeader post={post} />
           {tableOfContents.length > 0 ? (
             <div className="mt-6 lg:hidden">

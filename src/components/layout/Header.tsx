@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 left-0 z-50 w-full border-b border-stone-200/80 bg-white/72 backdrop-blur-md dark:border-stone-800/80 dark:bg-stone-950/72">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="min-w-0">
           <div className="flex items-center gap-3">
             <Image
