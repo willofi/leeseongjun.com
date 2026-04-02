@@ -5,6 +5,7 @@ import Main from '@/components/layout/Main';
 import AppToaster from '@/components/ui/toaster';
 import { siteConfig } from '@/lib/constants';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
@@ -67,6 +68,8 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const cloudflareBeaconToken = process.env.NEXT_PUBLIC_CLOUDFLARE_BEACON_TOKEN;
+
   return (
     <html
       lang="ko"
@@ -79,6 +82,15 @@ export default function RootLayout({
         <Main>{children}</Main>
         <Footer />
         <AppToaster />
+        {cloudflareBeaconToken ? (
+          <Script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify({
+              token: cloudflareBeaconToken,
+            })}
+          />
+        ) : null}
       </body>
     </html>
   );
