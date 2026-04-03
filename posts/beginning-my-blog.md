@@ -2,7 +2,7 @@
 title: '블로그를 시작하며..'
 excerpt: 'Diary'
 tags: ['blog', 'essay']
-pinned: true
+pinned: false
 coverImage: '/assets/blog/cover/beginning-my-blog.jpg'
 date: '2025-03-16'
 author:

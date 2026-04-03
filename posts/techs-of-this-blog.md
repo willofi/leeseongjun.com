@@ -1,7 +1,7 @@
 ---
 title: '이 블로그를 만들며 사용한 기술들'
 excerpt: '이 블로그를 구성한 기술 스택과, 각 기술을 선택한 이유를 정리했다.'
-tags: ['nextjs']
+tags: ['blog', 'nextjs']
 pinned: false
 coverImage: '/assets/blog/cover/techs-of-this-blog.avif'
 date: '2026-03-31'
