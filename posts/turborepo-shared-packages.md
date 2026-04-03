@@ -156,14 +156,16 @@ export * from './modal';
 `.npmrc`
 
 ```txt
-@lsj:registry=https://gitlab.example.com/api/v4/projects/84/packages/npm/
-//gitlab.example.com/api/v4/projects/84/packages/npm/:_authToken=${GITLAB_TOKEN}
+@lsj:registry=https://gitlab.example.com/api/v4/projects/<project-id>/packages/npm/
+//gitlab.example.com/api/v4/projects/<project-id>/packages/npm/:_authToken=${GITLAB_TOKEN}
 ```
 
 여기서 중요한 포인트는 두 가지였다.
 
 - scope와 패키지명의 scope는 반드시 일치해야 한다
 - 토큰은 코드에 직접 넣지 않고 환경변수로 주입해야 한다
+
+여기서 `<project-id>`는 GitLab 프로젝트의 숫자 ID다.
 
 예를 들어 패키지명이 `@lsj/ui`라면, `.npmrc`에도 `@lsj` scope가 정확히 맞아야 한다.
 
