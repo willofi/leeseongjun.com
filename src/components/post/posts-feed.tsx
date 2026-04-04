@@ -1,6 +1,5 @@
 'use client';
 
-import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
 import { Post } from '@/interfaces/post';
 import { cn } from '@/lib/utils';
@@ -28,10 +27,15 @@ export function PostsFeed({ posts }: Props) {
       : posts.filter((post) => post.tags?.includes(selectedTag));
 
   return (
-    <section className="space-y-5">
+    <section className="space-y-4">
       <div className="space-y-3">
-        <Badge variant="outline">Posts</Badge>
-        <div className="flex flex-wrap gap-x-3 gap-y-2 pl-2 text-sm text-stone-500 dark:text-stone-400">
+        <div className="flex items-center gap-3">
+          <h2 className="text-[11px] font-semibold tracking-[0.18em] text-stone-500 uppercase dark:text-stone-400">
+            All Posts
+          </h2>
+          <div className="h-px flex-1 bg-stone-100 dark:bg-stone-800" />
+        </div>
+        <div className="flex flex-wrap gap-x-3 gap-y-2 text-sm text-stone-500 dark:text-stone-400">
           <button
             type="button"
             onClick={() => setSelectedTag(allTag)}

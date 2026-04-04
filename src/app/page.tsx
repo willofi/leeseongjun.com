@@ -17,7 +17,7 @@ export default function Home() {
     <section className="mx-auto pt-8 pb-16 md:pt-12 md:pb-24">
       <Container>
         {visiblePinnedPosts.length > 0 ? (
-          <section className="mb-3 grid grid-cols-1 gap-2.5 md:grid-cols-2">
+          <section className="mb-5 grid grid-cols-1 gap-2.5 md:grid-cols-2">
             {visiblePinnedPosts.map((post) => (
               <PostCard key={post.slug} post={post} pinnedLabel="Pinned post" />
             ))}
