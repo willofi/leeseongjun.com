@@ -1,6 +1,6 @@
 ---
 title: '블로그를 시작하며..'
-excerpt: 'Diary'
+excerpt: '개인 개발 블로그를 시작하며, 왜 이제야 글을 쓰기로 했는지와 앞으로 이 공간에 남기고 싶은 기록의 방향을 정리한 글입니다.'
 tags: ['blog', 'essay']
 pinned: false
 coverImage: '/assets/blog/cover/beginning-my-blog.jpg'

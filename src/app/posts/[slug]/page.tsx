@@ -55,6 +55,9 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     alternates: {
       canonical: url,
     },
+    other: {
+      'article:modified_time': post.date,
+    },
     authors: [{ name: post.author.name }],
     openGraph: {
       type: 'article',
@@ -62,6 +65,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
       title,
       description,
       publishedTime: post.date,
+      modifiedTime: post.date,
       authors: [post.author.name],
       images: [
         {
